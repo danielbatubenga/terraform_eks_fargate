@@ -1,4 +1,3 @@
-
 output "eks" {
   description = "The generate AWS EKS cluster"
   value       = module.eks.cluster
@@ -15,6 +14,6 @@ output "kubeconfig" {
 }
 
 output "features" {
-  description = "Features configuration of the AWS EKS cluster"
-  value       = moodule.eks.features
+  description = "Features configurations of the AWS EKS cluster"
+  value       = module.eks.features
 }

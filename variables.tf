@@ -36,9 +36,9 @@ variable "managed_node_groups" {
   default     = []
 }
 
-variable "fargate_profile" {
+variable "fargate_profiles" {
   description = "Amazon Fargate for EKS profiles"
-  defadefault = []
+  default = []
 }
 
 ### description
