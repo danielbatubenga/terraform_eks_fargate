@@ -12,7 +12,7 @@ provider "aws" {
 module "vpc" {
   source             = "terraform-aws-modules/vpc/aws"
   version            = "2.78.0"
-  name               = "eks_vpc"
+  name               = "eks-vpc"
   azs                = var.azs
   cidr               = "10.0.0.0/18"
   private_subnets    = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
@@ -25,13 +25,13 @@ module "vpc" {
 # eks
 
 module "eks" {
-  source               = "danielbatubenga/eks/aws"
-  version              = "1.7.10"
-  name                 = var.name
-  tags                 = var.tags
-  subnets              = module.vpc.private_subnets
-  kubernetes_version   = var.kubernetes_version
-  managed_node_groups  = var.managed_node_groups
-  node_groups          = var.node_groups
-  fargate_profile      = var.fargate_profile
+  source              = "Young-ook/eks/aws"
+  version             = "1.7.10"
+  name                = var.name
+  tags                = var.tags
+  subnets             = module.vpc.private_subnets
+  kubernetes_version  = var.kubernetes_version
+  managed_node_groups = var.managed_node_groups
+  node_groups         = var.node_groups
+  fargate_profiles    = var.fargate_profiles
 }
